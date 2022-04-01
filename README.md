@@ -1,44 +1,73 @@
 # Welcome
 
-Welcome to this tutorial for application development on SAP Business Technology Platform (SAP BTP). We provide information and examples on how to develop and deploy an application based on [SAP Cloud Application Programming Model (CAP)](https://cap.cloud.sap/) on SAP BTP using different tools and services step by step.
+Welcome to this tutorial for application development on SAP Business Technology Platform (SAP BTP). 
 
-It's planned to provide multiple modules that are built upon each other. You can start the tutorial with the first module, or start in between, because the source code for every tutorial module is provided in this repository.
+It contains these folders and files, following our recommended project layout:
+
+| Component      | Root directory       |Purpose                                   |
+| -------------- | -------------------- |--------------------------------------------------- |
+| Web App        | [app](app)           |content for UI frontends goes here                  |
+| srv            | [srv](srv)           |your service models and business logic go here      |
+| router         | [router](router)     |your application routes and code go here  |
+| db             | [db](db)             |your domain models and data go here       |
+
+## Requirements
+
+-   [Node.js](https://nodejs.org/en/download/)
+-   [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for dependency management
+-   install [@sap/cds-dk](https://www.npmjs.com/package/@sap/cds-dk) globally
+-   install [@ui5/cli](https://www.npmjs.com/package/@ui5/cli) globally
+
 
 ## Download and Installation
 
-If you want to start from a specific tutorial module, get the name of its branch from the [tutorial](http://sap-samples.github.io/cloud-cap-risk-management), download this repository and switch to the desired branch:
+1. Clone the project:
 
-```bash
-git clone https://github.com/SAP-samples/cloud-cap-risk-management
-cd cloud-cap-risk-management
-git checkout cap-mta-deployment
+```sh
+git clone 
+cd cpapp
 ```
 
-## Known Issues
+2. In the cpapp folder, use npm (or yarn) to install the dependencies:
 
-You can find the known issues [here](https://github.com/SAP-samples/cloud-cap-risk-management/issues).
+```sh
+npm install
+```
+For dev packacges use the command : npm install package-name --save-dev
 
-## How to Obtain Support
 
-Check out the documentation for:
+## Run, Build and Deploy the App
 
-* [CAP aka "capire"](https://cap.cloud.sap/docs/advanced/troubleshooting)
-* [SAP BTP](https://help.sap.com/viewer/product/CP/Cloud/)
+### Run the App locally
 
-In case you have a question, find a bug, or otherwise need support to use SAP products, use:
+```sh
 
-* [CAP Community](https://answers.sap.com/tags/9f13aee1-834c-4105-8e43-ee442775e5ce)
-* [SAP Community](https://community.sap.com/)
-* [SAP BTP Support Components](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/08d1103928fb42f3a73b3f425e00e13c.html)
+    cds deploy --to sqlite:test.db // optional in case of db changes
+    cds watch
 
-If you face a problem with the example application or the description, feel free to create an [issue](https://github.com/SAP-samples/cloud-cap-risk-management/issues).
+```
 
-## Contributing
 
-If you have suggestions on how to improve the tutorial, you're welcome to provide your input [here](https://github.com/SAP-samples/cloud-cap-risk-management/issues).
+### Setup CI/CD
 
-## License
+Follow the steps mention in this README : https://github.com/SAP-samples/s4hana-btp-extension-devops/tree/mission/10-SetupCICD
 
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-cap-risk-management)](https://api.reuse.software/info/github.com/SAP-samples/cloud-cap-risk-management)
 
-Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+### Build the MTA and Deploy to Cloud Foundry
+
+> Additional preparation steps and tools are required to deploy the application to SAP BTP, Cloud Foundry environment. For more information and guidance on the initial setup, please have a look at these tutorials and resources:
+>
+> -   [Create a trial account on SAP BTP](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+> -   [Create SAP HANA Cloud Service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#08480ec0-ac70-4d47-a759-dc5cb0eb1d58)
+> -   [Install Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
+> -   [Install MultiApps CF CLI Plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin)
+> -   [Install Cloud MTA Build Tool](https://sap.github.io/cloud-mta-build-tool/download/)
+> -   [Follow the steps given in the Tutorial](https://developers.sap.com/tutorials/btp-app-cap-mta-deployment.html)
+```sh
+mbt build -t ./
+```
+
+```sh
+cf8 login
+cf8 deploy XXXXX.mtar
+```
