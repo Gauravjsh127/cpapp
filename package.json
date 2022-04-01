@@ -8,6 +8,7 @@
     "dependencies": {
         "@sap/cds": "^5",
         "@sap/xssec": "^3.2.8",
+        "cds-swagger-ui-express": "^0.3.0",
         "express": "^4",
         "hdb": "^0.18.3",
         "passport": "^0.5.0"
