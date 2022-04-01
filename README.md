@@ -24,7 +24,7 @@ It contains these folders and files, following our recommended project layout:
 1. Clone the project:
 
 ```sh
-git clone 
+git clone https://github.com/Gauravjsh127/cpapp.git
 cd cpapp
 ```
 
