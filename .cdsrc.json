@@ -1,0 +1,25 @@
+{
+    "[development]": {
+        "auth": {
+            "passport": {
+                "strategy": "mock",
+                "users": {
+                    "risk.viewer@tester.sap.com": {
+                        "password": "password",
+                        "ID": "client@tester.sap.com",
+                        "roles": [
+                            "Client"
+                        ]
+                    },
+                    "risk.manager@tester.sap.com": {
+                        "password": "password",
+                        "ID": "admin@tester.sap.com",
+                        "roles": [
+                            "Admin"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

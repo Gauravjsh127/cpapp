@@ -1,0 +1,30 @@
+{
+    "xsappname": "bcg-circelligence",
+    "scopes": [{
+            "name": "$XSAPPNAME.Client",
+            "description": "Client"
+        },
+        {
+            "name": "$XSAPPNAME.Admin",
+            "description": "Admin"
+        }
+    ],
+    "attributes": [],
+    "role-templates": [{
+            "name": "Client",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.Client"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "Admin",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.Admin"
+            ],
+            "attribute-references": []
+        }
+    ]
+}
