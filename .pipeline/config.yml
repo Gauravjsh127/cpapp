@@ -34,7 +34,7 @@ steps:
   
   cloudFoundryDeploy:   # only relevant, if you set the cloudFoundryDeploy parameter in the Release stage to true
     cloudFoundry:
-      credentialsId: 'cf-credential'
+      credentialsId: 'cf-authentication'
       apiEndpoint: https://api.cf.us10.hana.ondemand.com    # for example, https://api.cf.eu10.hana.ondemand.com
       org: 0e9061aftrial # your cloud foundry org name
       space: dev # your cloud foundry space name
