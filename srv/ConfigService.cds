@@ -1,7 +1,7 @@
 using { cpapp.industry } from '../db/industryconfigmodel';
 
 
-service ConfigurationService@(path: '/ConfigurationService') {
+service ConfigurationService@(path: '/ConfigurationService-test') {
 
     entity ConfigurationSet @(restrict : [
         {

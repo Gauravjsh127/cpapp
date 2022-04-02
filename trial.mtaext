@@ -1,0 +1,17 @@
+_schema-version: 3.3.0
+ID: cpapp-live
+extends: cpapp
+
+version: 1.0.0
+
+modules:
+- name: cpapp-srv
+  parameters:
+    instances: 2
+
+resources:
+  - name: cpapp-ems
+    parameters:
+      path: ./em-trial.json 
+      service: enterprise-messaging
+      service-plan: dev
