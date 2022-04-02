@@ -19,7 +19,7 @@ It contains these folders and files, following our recommended project layout:
 -   install [@ui5/cli](https://www.npmjs.com/package/@ui5/cli) globally
 
 
-## Download and Installation 
+## Download and Installation
 
 1. Clone the project:
 
