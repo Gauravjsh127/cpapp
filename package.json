@@ -11,8 +11,7 @@
         "cds-swagger-ui-express": "^0.3.0",
         "express": "^4",
         "hdb": "^0.18.3",
-        "passport": "^0.5.0",
-        "xlsx": "^0.18.5"
+        "passport": "^0.5.0"
     },
     "devDependencies": {
         "@sap/ux-specification": "^1.90.12",
@@ -56,10 +55,7 @@
     "cds": {
         "requires": {
             "db": {
-                "kind": "sqlite",
-                "credentials": {
-                    "database": "test.db"
-                }
+                "kind": "sql"
             },
             "uaa": {
                 "kind": "xsuaa",
