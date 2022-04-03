@@ -44,75 +44,30 @@
             "CXL": true,
             "cds": true
         },
-        <<
-        <<
-        <<
-        < HEAD "engines": {
-            "node": "^16"
-        },
-        "scripts": {
-            "start": "cds run"
-        },
-        "eslintConfig": {
-            "extends": "eslint:recommended",
-            "env": {
-                "es2020": true,
-                "node": true,
-                "jest": true,
-                "mocha": true
-            },
-            "globals": {
-                "SELECT": true,
-                "INSERT": true,
-                "UPDATE": true,
-                "DELETE": true,
-                "CREATE": true,
-                "DROP": true,
-                "CDL": true,
-                "CQL": true,
-                "CXL": true,
-                "cds": true
-            },
-            "rules": {
-                "no-console": "off",
-                "require-atomic-updates": "off" ===
-                    ===
-                    =
-                    "rules": {
-                        "no-console": "off",
-                        "require-atomic-updates": "off"
-                    }
-            },
-            "sapux": [
-                "app/risks",
-                "app/mitigations"
-            ],
-            "cds": {
-                "requires": {
-                    "db": {
-                        "kind": "sqlite",
-                        "credentials": {
-                            "database": "test.db" >>>
-                                >>>
-                                >
-                                73 f930d054200df223000cffe7caff33cdd7a902
-                        }
-                    },
-                    "uaa": {
-                        "kind": "xsuaa",
-                        "credentials": {}
-                    }
-                },
-                "hana": {
-                    "deploy-format": "hdbtable"
-                } <<
-                <<
-                <<
-                < HEAD ===
-                ===
-                =
-            } >>>
-            >>>
-            >
-            73 f930d054200df223000cffe7caff33cdd7a902
+        "rules": {
+            "no-console": "off",
+            "require-atomic-updates": "off"
         }
+    },
+    "sapux": [
+        "app/risks",
+        "app/mitigations"
+    ],
+    "cds": {
+        "requires": {
+            "db": {
+                "kind": "sqlite",
+                "credentials": {
+                    "database": "test.db"
+                }
+            },
+            "uaa": {
+                "kind": "xsuaa",
+                "credentials": {}
+            }
+        },
+        "hana": {
+            "deploy-format": "hdbtable"
+        }
+    }
+}
