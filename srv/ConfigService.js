@@ -25,13 +25,6 @@ module.exports = srv => {
     srv.after("READ", "GetConfig", data => {
         console.log(data);
         console.log(data.length);
-        // console.log(typeof(data));
-        // // if (typeof data === "object") {
-        // //     new_data = []
-        // //     new_data.push(data);
-        // // } else {
-        // //     new_data = data;
-        // // }
         if (typeof data.length === "undefined") {
             new_data = []
             new_data.push(data);
