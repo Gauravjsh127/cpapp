@@ -2,7 +2,7 @@ namespace cpapp.industry;
 using { cuid } from '@sap/cds/common';
 
 
-entity Configuration {
+entity Config {
     key project_id : String(20);
     config_1  : Integer;
     config_2  : Integer;
