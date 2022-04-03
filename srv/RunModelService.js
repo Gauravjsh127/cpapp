@@ -6,7 +6,7 @@ const { Config } = cds.entities("cpapp.industry");
 module.exports = srv => {
 
     srv.on("runmodel", async(req, res) => {
-        let project_id = req.data.msg
+        let project_id = req.data.project_id
         console.log(project_id);
 
         config_details = await SELECT.one.from(Config).where({ project_id: project_id });
