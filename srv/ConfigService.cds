@@ -1,17 +1,16 @@
 using { cpapp.industry } from '../db/industryconfigmodel';
 
 
-service ConfigurationService@(path: '/ConfigurationService') {
+service ConfigService@(path: '/ConfigService') {
 
-    entity ConfigurationSet @(restrict : [
-        {
-            grant : [ 'READ' ],
-            to : [ 'Client' ]
-        },
+    @insertonly entity CreateConfig @(restrict : [
         {
             grant : [ '*' ],
             to : [ 'Admin' ]
         }
-    ]) as projection on industry.Configuration;
+    ]) as projection on industry.Config;
+
+
+    @readonly entity GetConfig as projection on industry.Config;
 
 }

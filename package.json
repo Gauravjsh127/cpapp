@@ -11,7 +11,8 @@
         "cds-swagger-ui-express": "^0.3.0",
         "express": "^4",
         "hdb": "^0.18.3",
-        "passport": "^0.5.0"
+        "passport": "^0.5.0",
+        "xlsx": "^0.18.5"
     },
     "devDependencies": {
         "@sap/ux-specification": "^1.90.12",
@@ -43,27 +44,75 @@
             "CXL": true,
             "cds": true
         },
-        "rules": {
-            "no-console": "off",
-            "require-atomic-updates": "off"
-        }
-    },
-    "sapux": [
-        "app/risks",
-        "app/mitigations"
-    ],
-    "cds": {
-        "requires": {
-            "db": {
-                "kind": "sql"
-            },
-            "uaa": {
-                "kind": "xsuaa",
-                "credentials": {}
-            }
+        <<
+        <<
+        <<
+        < HEAD "engines": {
+            "node": "^16"
         },
-        "hana": {
-            "deploy-format": "hdbtable"
+        "scripts": {
+            "start": "cds run"
+        },
+        "eslintConfig": {
+            "extends": "eslint:recommended",
+            "env": {
+                "es2020": true,
+                "node": true,
+                "jest": true,
+                "mocha": true
+            },
+            "globals": {
+                "SELECT": true,
+                "INSERT": true,
+                "UPDATE": true,
+                "DELETE": true,
+                "CREATE": true,
+                "DROP": true,
+                "CDL": true,
+                "CQL": true,
+                "CXL": true,
+                "cds": true
+            },
+            "rules": {
+                "no-console": "off",
+                "require-atomic-updates": "off" ===
+                    ===
+                    =
+                    "rules": {
+                        "no-console": "off",
+                        "require-atomic-updates": "off"
+                    }
+            },
+            "sapux": [
+                "app/risks",
+                "app/mitigations"
+            ],
+            "cds": {
+                "requires": {
+                    "db": {
+                        "kind": "sqlite",
+                        "credentials": {
+                            "database": "test.db" >>>
+                                >>>
+                                >
+                                73 f930d054200df223000cffe7caff33cdd7a902
+                        }
+                    },
+                    "uaa": {
+                        "kind": "xsuaa",
+                        "credentials": {}
+                    }
+                },
+                "hana": {
+                    "deploy-format": "hdbtable"
+                } <<
+                <<
+                <<
+                < HEAD ===
+                ===
+                =
+            } >>>
+            >>>
+            >
+            73 f930d054200df223000cffe7caff33cdd7a902
         }
-    }
-}
