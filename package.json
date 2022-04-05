@@ -56,7 +56,10 @@
     "cds": {
         "requires": {
             "db": {
-                "kind": "sql"
+                "kind": "sqlite",
+                "credentials": {
+                    "database": "test.db"
+                }
             },
             "uaa": {
                 "kind": "xsuaa",
