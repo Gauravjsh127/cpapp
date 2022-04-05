@@ -1,20 +1,19 @@
 const cds = require("@sap/cds");
-const { ProjectData } = cds.entities("cpapp.project");
-const { ResultsData } = cds.entities("cpapp.results");
-const { Config } = cds.entities("cpapp.industry");
+const { Data, Config, Result } = cds.entities("cpapp.db");
+
 
 module.exports = srv => {
-
     srv.on("runmodel", async(req, res) => {
         let project_id = req.data.project_id
         console.log(project_id);
-
+        // Read Config table from database. Corresponding to 'SELECT * from circelligence_db_config'
         config_details = await SELECT.one.from(Config).where({ project_id: project_id });
         console.log(config_details);
-        project_data = await SELECT.one.from(ProjectData).where({ project_id: project_id });
+        // Read Data table from database. Corresponding to 'SELECT * from circelligence_db_project'
+        project_data = await SELECT.one.from(Data).where({ project_id: project_id });
         console.log(project_data);
 
-        results_data = await INSERT.into(ResultsData).entries({
+        results_data = await INSERT.into(Result).entries({
             project_id: project_id,
             output_1: config_details.config_1 + project_data.input_1,
             output_2: config_details.config_2 + project_data.input_2,
