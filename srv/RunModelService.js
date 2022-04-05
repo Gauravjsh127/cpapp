@@ -6,10 +6,10 @@ module.exports = srv => {
     srv.on("runmodel", async(req, res) => {
         let project_id = req.data.project_id
         console.log(project_id);
-        // Read Config table from database. Corresponding to 'SELECT * from circelligence_db_config'
+        // Read Config table from database. Corresponding to 'SELECT * from cpapp_db_config'
         config_details = await SELECT.one.from(Config).where({ project_id: project_id });
         console.log(config_details);
-        // Read Data table from database. Corresponding to 'SELECT * from circelligence_db_project'
+        // Read Data table from database. Corresponding to 'SELECT * from cpapp_db_project'
         project_data = await SELECT.one.from(Data).where({ project_id: project_id });
         console.log(project_data);
 
