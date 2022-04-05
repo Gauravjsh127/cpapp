@@ -1,5 +1,5 @@
 {
-    "xsappname": "bcg-circelligence",
+    "xsappname": "cpapp",
     "scopes": [{
             "name": "$XSAPPNAME.Client",
             "description": "Client"
