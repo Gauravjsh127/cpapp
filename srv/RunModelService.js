@@ -24,4 +24,43 @@ module.exports = srv => {
         return "Project Id : " + project_id;
     });
 
+    srv.on('UPDATE', 'Excels', async req => {
+        console.log(req.data);
+        // read from a stream
+        let reader = new ExcelReader(req.data.content, {
+            sheets: [{
+                name: 'testdata',
+                rows: {
+                    headerRow: 1,
+                    allowedHeaders: [{
+                        name: 'project_id',
+                        key: 'project_id'
+                    }, {
+                        name: 'Input_1',
+                        key: 'Input_1'
+                    }, {
+                        name: 'Input_2',
+                        key: 'Input_2'
+                    }]
+                }
+            }]
+        })
+        console.log('starting parse');
+        reader.eachRow((rowData, rowNum, sheetSchema) => {
+                console.log(rowData);
+            })
+            .then(() => {
+                console.log('done parsing');
+            });
+    })
+
+    srv.on('READ', 'Excels', (req, next) => {
+        if (!req.data.ID) {
+            return next()
+        }
+        return {
+            value: fs.createReadStream('swagger/test_xls.xlsx')
+        }
+    })
+
 };
