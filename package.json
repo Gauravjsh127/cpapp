@@ -22,7 +22,8 @@
         "node": "^16"
     },
     "scripts": {
-        "start": "cds run"
+        "start": "cds run",
+        "start-service": "cds run --with-mocks --in-memory"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",

@@ -1,0 +1,9 @@
+{
+    "routes": [{
+        "source": "^/service/(.*)$",
+        "target": "/service/$1",
+        "destination": "cpapp-srv",
+        "authenticationType": "xsuaa",
+        "csrfProtection": false
+    }]
+}
